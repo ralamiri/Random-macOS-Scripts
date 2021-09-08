@@ -9,7 +9,9 @@ https://explainshell.com/ - Super helpful for searching what a command does, and
 
 # Commands
 ## System Management
-Use nvram -c to clear nvram
+To clear the nvram on a device, use `nvram -c`
 
+To check if a device is DEP enrolled, and the associated MDM and info use: `sudo /usr/bin/profiles show -type enrollment` 
+*NOTE: This will also trigger device supervision on DEP enrolled, unsupervised devices*
 
 # Paths

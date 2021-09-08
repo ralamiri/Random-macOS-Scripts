@@ -16,3 +16,4 @@ sed -i "" -e "2{h;s/.*/$touchid/;p;g;}" /etc/pam.d/sudo
 exit 0
 
 # To-Do: Un-spaghett script
+# Find way to prevent removal when system updates

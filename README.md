@@ -4,7 +4,7 @@ Most of these were made for fun, or to see if it's possible to do.
 Please read the disclaimer before running any of these commands or scripts.
 
 
-The repository is organized as follows:
+**The repository is organized as follows:**
 
 ### Scripts
 When executed will make changes or do something on the system.

@@ -1,5 +1,5 @@
 # README
-This is a collection of bash scripts I wrote for macOS/Unix-based systems
+This is a collection of bash scripts I wrote for macOS.
 Most of these were made for fun, or to see if it's possible to do. 
 Please read the disclaimer before running any of these commands or scripts.
 

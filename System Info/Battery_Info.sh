@@ -1,13 +1,17 @@
 #!/bin/bash
 
+#######################
+# Disclaimer
+# Please read the disclaimer before running, see README.md
 
-
-# Description: Battery Info
+#######################
+# Description
+# Battery Info
 
 
 # Return Condition
 system_profiler SPPowerDataType | grep "Condition" | awk '{print $2}'
 
 
-# Return if charged
-ioreg -r -c "AppleSmartBattery" | grep -w "FullyCharged" | awk '{print $3}' | sed s/\"//g
+## To-Do: Add more commands
+## Add command for current charging status

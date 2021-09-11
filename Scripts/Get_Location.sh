@@ -11,19 +11,19 @@
 
 
 # Get public IP
-pubip=$(curl ifconfig.me)
-    GeoLocate_list=$(curl https://freegeoip.app/xml/$pubip)
+pubip=$(curl ifconfig.me) # Get device's IP address
+    GeoLocate_list=$(curl https://freegeoip.app/xml/$pubip) # Get location from IP, and check if it returns something
     if [[ -n "$GeoLocate_list" ]]; then
-        echo "$GeoLocate_list"
-        country=$(grep 'CountryName' $GeoLocate_list | awk -F">" '{print $2}' | awk -F"<" '{print $1}')
-        province=$(grep 'RegionCode' $GeoLocate_list | awk -F">" '{print $2}' | awk -F"<" '{print $1}')
-        city=$(grep 'City' $GeoLocate_list | awk -F">" '{print $2}' | awk -F"<" '{print $1}')
+        country=$(echo "$GeoLocate_list" | grep 'CountryName'| awk -F"[><]" '{print $3}') # Get Country
+        reigion=$(echo "$GeoLocate_list" | grep 'RegionCode' | awk -F"[><]" '{print $3}') # Get Reigion
+        city=$(echo "$GeoLocate_list" | grep 'City'| awk -F"[><]" '{print $3}') # Get City
 
-        location=("$city, $province $country")
+        location=("$city, $reigion $country")
+        echo "$location"    # Print location
 
-        echo "$location"
     else
-        echo "ERROR: Location Unknown"
+        echo "ERROR: Location Unknown"  # Otherwise if no location found, return error
         exit 1;
+
     fi
 exit 0;
